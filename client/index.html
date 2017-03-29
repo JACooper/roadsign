@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Roadsign</title>
+    
+    <!-- Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="js/roadsignGlobals.js"></script>
+    <script src="js/roadsign.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLEG1_negubxBoabHYh-tv8ZnG3URpCpU&callback=initMap" async defer></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/roadsign.css">
+
+</head>
+<body>
+    <div id="introWrapper">
+        <div id="intro">
+            <img src="images/roadsign.png" alt="roadsign logo" height="300" width="300" />
+            <h3>Let's get started.</h3>
+            <p>What you would like to do:</p>
+            <button id="doRouteSearch">Find stations along my route</button>
+            <button id="doCloseSearch">Find a station near me</button>
+        </div>
+    </div>
+
+    <div id="FindRouteFormWrapper">
+        <form id="FindRouteForm" action="routeSearch" method="get">
+            <input id="origin" type="text" name="origin" placeholder="Enter origin (e.g. Rochester, NY)">
+            <input id="destination" type="text" name="destination" placeholder="Enter destination (e.g. Boston, MA)">
+
+            <input type="submit" value="Find route">
+        </form>
+    </div>
+
+    <div id="FindCloseStationFormWrapper">
+        <form id="FindCloseStationForm" action="stationSearch" method="get">
+            <input id="closeDistance" type="text" name="distance" placeholder="Search Radius [Miles]">
+            <select id="closeSortBy" name="sortBy">
+                <option value="distance" selected>Distance [Closer first]</option>
+                <option value="price">Price [Lower first]</option>
+            </select>
+
+            <input type="submit" value="Find nearby stations">
+        </form>
+    </div>
+
+    <div id="FindRouteStationFormWrapper">
+        <form id="FindRouteStationForm" action="stationSearch" method="get">
+            <input id="routeInterval" type="text" name="interval" placeholder="Search Interval [Miles]">
+            <input id="routeDistance" type="text" name="distance" placeholder="Search Radius [Miles]">
+            <select id="routeSortBy" name="sortBy">
+                <option value="distance" selected>Distance [Closer first]</option>
+                <option value="price">Price [Lower first]</option>
+            </select>
+
+            <input type="submit" value="Find stations along route">
+        </form>
+    </div>
+
+    <div id="LoadingScreen">
+        <p>Loading. . .this might take a while</p>
+    </div>
+
+    <div id="mapDiv">
+
+    </div>
+
+    <div id="stationList">
+
+    </div>
+
+    <div id="result"></div>
+
+</body>
+</html>

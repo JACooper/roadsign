@@ -1,0 +1,20 @@
+{
+  "name": "roadsign",
+  "version": "1.0.0",
+  "engines": {
+    "node": "7.1.0",
+    "npm": "3.10.9"
+  },
+  "description": "Web application using Google Maps & MyGasFeed APIs to deliver gas station locations along a route, and update said route according to selected gas stations",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "test": "echo \"No tests\""
+  },
+  "author": "Jesse Cooper",
+  "license": "MIT",
+  "dependencies": {
+    "@google/maps": "^0.3.1",
+    "request": "^2.79.0"
+  }
+}
